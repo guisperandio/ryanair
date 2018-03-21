@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ryanair FE Test</title>
+  <meta name="description" content="<%= htmlWebpackPlugin.options.metadata.description %>">
+  <!-- base url -->
+  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+  <% if (webpackConfig.htmlElements.headTags) { %>
+  <!-- Configured Head Tags  -->
+  <%= webpackConfig.htmlElements.headTags %>
+  <% } %>
+
+
+  <%= htmlWebpackPlugin.files.webpackManifest %>
+
+  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+
+  <!-- Async Google Tag Manager: change gtmKey value inside config.prod.conf to your to be your site's ID-->
+  <% if (htmlWebpackPlugin.options.gtmKey) { %>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','<%= htmlWebpackPlugin.options.gtmKey %>');</script>
+  <!-- End Google Tag Manager -->
+  <% } %>
+  <!-- End Google Analytics -->
+
+  <!-- CSS will be injected by webpack here -->
+  <!-- Preload link tags will be injected by webpack here -->
+
+</head>
+<style>
+  @media (min-width: 200px){
+    .loader{
+      width: 30%;
+      height: 22%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+<body style="background-color: rgb(49, 153,218);">
+<% if (htmlWebpackPlugin.options.gtmKey) { %>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= htmlWebpackPlugin.options.gtmKey %>"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<% } %>
+
+  <app style="width: 100%; height: 100vh">
+    <img class="loader" src="./assets/img/flight-loader-dribbble.gif" alt="">
+  </app>
+
+  <!-- Scripts will be injected by webpack here -->
+</body>
+</html>

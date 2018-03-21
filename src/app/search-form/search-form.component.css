@@ -1,0 +1,52 @@
+app-search-form {
+    width: 100%;
+    display: block;
+}
+
+.simple-form {
+    display: block;
+    padding: 10px;
+    background-color: #1e8adf;
+    position: relative;
+    top: -40px;
+}
+
+.fa-angle-down, .fa-angle-up {
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    font-size: 25px;
+}
+
+app-airports,
+.form-group,
+button {
+    width: 80%;
+    display: block;
+    margin: 10px auto;
+}
+
+.label-flights {
+    z-index: 10;
+    position: absolute;
+    top: -78px;
+    height: 50px;
+    color: #fff;
+    background-color: #1e8adf;
+    padding: 10px 65px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.form-open form {
+    display: block;
+}
+
+.form-close form {
+    display: none;
+}
+
+.form-close .label-flights {
+    top: -70px;
+}

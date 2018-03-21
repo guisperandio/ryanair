@@ -1,0 +1,20 @@
+<div class="container" *ngIf="cheapFlight">
+    <div class="subheader">
+        <img src="../../assets/img/ryanair.png" alt="" width="100">
+    </div>
+    <div class="left-content">
+        <span class="small-title">Departure Flight</span>
+        <span class="date-flight">{{ dateFrom.date }}</span>
+        <span class="hour-flight">{{ dateFrom.hour }}</span>
+    </div>
+    <div class="right-content">
+        <span class="small-title">Flight Back</span>
+        <span class="date-flight">{{ dateTo.date }}</span>
+        <span class="hour-flight">{{ dateTo.hour }}</span>
+    </div>
+    <div class="footer-content">
+        <span class="price-flight">{{ cheapFlight['price'] }} {{ cheapFlight['currency'] }}</span>
+    </div>
+</div>
+<div class="noFlight" *ngIf="!cheapFlight">No flights found!</div>
+

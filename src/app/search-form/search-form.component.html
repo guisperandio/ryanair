@@ -1,0 +1,16 @@
+<div class="container" [ngClass]="{'form-open': state == 'searchState', 'form-close': state == 'resultState'}">
+  <div class="label-flights"><i class="fa fa-plane"></i><span>Flights</span> <i *ngIf="state == 'resultState'" (click)="doPopUp(true)" class="fa fa-angle-down"></i> <i *ngIf="state == 'searchState'" (click)="doPopUp(false)" class="fa fa-angle-up"></i> </div>
+  <form (submit)="onSubmit()" class="simple-form">
+    <app-airports [options]="options" (fromChanged)="onFromChanged($event)" (toChanged)="onToChanged($event)" [from]="payload.from" [to]="payload.to" [countries]="countries"></app-airports>
+
+    <div class="form-group">
+      <label for="startDate">Start Date:</label>
+      <input type="date" (change)="checkDate($event, 'startDate')" class="form-control" id="startDate" name="startDate" required min="{{ date }}" placeholder="{{ date }}" value="{{ payload.startDate }}">
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" (change)="checkDate($event, 'endDate')" class="form-control" id="endDate" name="endDate" required value="{{ payload.endDate }}" min="{{ date }}" placeholder="{{ payload.endDate }}">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

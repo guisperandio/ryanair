@@ -1,0 +1,19 @@
+<div class="container">
+  <input type="text" name="" (focus)="doPopUp(true)" value="{{ selectedAirport }}" placeholder="{{value}}" [(ngModel)]="searchText">
+  <div class="class" *ngIf="popUp">
+    <!-- <div class="divCountries">
+      <h2>Escolha um país</h2>
+      <div class="divCountry" *ngFor="let country of bigData.countries">
+        <span [ngClass]="{ 'countrySelected' : selectedCountry == country.name, 'countryDeselected' : selectedCountry != country.name}"
+          (click)="chooseCountry(country.name)">{{ country.name }}</span>
+      </div>
+    </div> -->
+    <div class="divAirports">
+      <div class="divAirport" *ngFor="let airport of options | search: searchText; let l = count " (click)="chooseAirport(airport.label, airport.value)">
+        <span class="autoComplete" *ngIf="l == 1 && popUp">{{ airport.label }}</span>
+        <span>{{ airport.label }}</span>
+        <span class="nameCountry">{{ airport.country.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>

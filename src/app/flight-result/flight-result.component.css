@@ -1,0 +1,55 @@
+.container {
+    margin: 10px 0;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: auto
+}
+
+.container .subheader,
+.container .left-content,
+.container .right-content,
+.container .footer-content {
+    padding: 0 10px;
+}
+
+.container .subheader {
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px 10px;
+}
+
+.left-content {
+    float: left;
+    margin-top: 10px;
+}
+
+.small-title{
+    font-size: 0.69em;
+    margin-bottom: 5px;
+}
+
+.hour-flight{
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+.right-content {
+    float: right;
+    margin-top: 10px;
+}
+
+.footer-content {
+    width: 100%;
+    float: left;
+}
+
+.price-flight {
+    width: 130px;
+    padding: 20px 10px;
+    border-radius: 5px;
+    background-color: #F1C933;
+    color: #073590;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 10px auto;
+    text-align: center;
+}
