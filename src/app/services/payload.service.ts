@@ -6,7 +6,7 @@ import { Payload } from '../models';
 export class PayloadService {
   public payload: Payload;
   constructor() {
-    this.payload = new Payload();
+    this.payload = new Payload('', '', '', '');
   }
 
   setPayload(newPayload: Payload) {

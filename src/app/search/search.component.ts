@@ -12,8 +12,8 @@ import { Airport, Country, Payload } from '../models';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit, AfterViewChecked {
-  public airports: Airport[];
-  public countries: Country[];
+  public airports: Observable<Airport[]>;
+  public countries: Observable<Country[]>;
   public payload: Payload;
   public date: string;
   public state: string = '';

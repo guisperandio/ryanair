@@ -24,7 +24,7 @@ export class FlightResultComponent implements AfterViewChecked, OnInit {
   }
 
   getData(dateValue) {
-    const paramDate : string = this.cheapFlight[dateValue];
+    const paramDate: string = this.cheapFlight[dateValue].toString();
     const date = new Date(paramDate);
     const day = (date.getDate().toString().length === 2) ?
       date.getDate() : '0' + date.getDate().toString();
