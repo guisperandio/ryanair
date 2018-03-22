@@ -12,7 +12,7 @@ export class CountriesService {
     this.apiUrl = config.apiUrls.airports;
   }
 
-  public getCountries(): Observable<Country[]> {
+  public getCountries() {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.get(this.apiUrl, { headers })

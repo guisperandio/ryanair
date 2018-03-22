@@ -12,8 +12,8 @@ import { Airport, Country, Payload } from '../models';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit, AfterViewChecked {
-  public airports: Airport[];
-  public countries: Country[];
+  public airports: Observable<Airport[]>;
+  public countries: Observable<Country[]>;
   public payload: Payload;
   public date: string;
   public state: string = '';
@@ -37,13 +37,10 @@ export class SearchComponent implements OnInit, AfterViewChecked {
   }
 
   public ngOnInit() {
-   
     this.getCountries();
     this.getAirports();
     this.getDate();
     this.getPayload();
-    
-    console.log(this.payload);
   }
 
   public ngAfterViewChecked() {
@@ -54,7 +51,7 @@ export class SearchComponent implements OnInit, AfterViewChecked {
     this.router.navigate([payload.from.iata, payload.to.iata, payload.startDate, payload.endDate]);
   }
 
-  getPayload(){
+  getPayload() {
     this.payload = this.payloadService.getPayload();
   }
 

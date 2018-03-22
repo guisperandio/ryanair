@@ -18,13 +18,13 @@ export class AirportsService {
     this.apiUrl = config.apiUrls.airports;
   }
 
-  public getAirports(): Observable<Airport[]> {
+  public getAirports() {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http
       .get(this.apiUrl, { headers })
       .map((res: Response) => {
-        return <Airport[]>res.json().airports;
+        return res.json().airports;
       })
       .catch(this.handleError);
   }
